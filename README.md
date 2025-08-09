@@ -10,7 +10,7 @@
 
 
 <br>
-<img src="https://raw.githubusercontent.com/YDaiLab/RAGulate/main/assets/Visual_Abstract.png" align="center" />
+<img src="https://raw.githubusercontent.com/YDaiLab/RAGulate/main/assets/RAGulate_logo.svg" align="center" />
 <br>
 
 For further information and example tutorials, please check our documentation:
