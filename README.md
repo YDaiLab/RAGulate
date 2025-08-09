@@ -21,7 +21,7 @@ If you have any questions or concerns, feel free to [open an issue](https://gith
 RAGulate is implemented in the LlamaIndex framework. Running RAGulate on `CUDA` is highly recommended if available.
 
 
-Before installing and running scRegulate, ensure you have the following libraries installed:
+Before installing and running RAGulate, ensure you have the following libraries installed:
 - **PyTorch** (version 2.0 or higher)  
   Install with the exact command from the [PyTorch “Get Started” page](https://pytorch.org/get-started/locally/) for your OS, Python version and (optionally) CUDA toolkit.
 - **NumPy** (version 1.23 or higher)
@@ -35,10 +35,10 @@ pip install torch numpy
 ## Installation
 
 **Option 1:**  
-You can install **scRegulate** via pip for a lightweight installation:
+You can install **RAGulate** via pip for a lightweight installation:
 
 ```bash
-pip install scregulate
+pip install RAGulate
 ```
 
 **Option 2:**  
@@ -58,7 +58,7 @@ conda install -c zandigohar RAGulate
 
 **Mamba:**
 ```bash
-mamba create -n scRegulate -c zandigohar RAGulate
+mamba create -n RAGulate -c zandigohar RAGulate
 ```
 
 ## FAQ
@@ -81,11 +81,11 @@ There are two quick checks:
    ```
 
 **Q3: Can I use RAGulate with R-based tools?**  
-scRegulate is written in Python and works directly with `Numpy` objects. 
+RAGulate is written in Python and works directly with `Numpy` objects. 
 
 **Q4:**
 
-**Q5: How do I cite scRegulate?**  
+**Q5: How do I cite RAGulate?**  
 See the [Citation](#citation) section below for the latest reference and preprint link.
 
 **Q6: How can I reproduce the paper’s results?**  
