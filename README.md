@@ -1,4 +1,4 @@
-# RAGulate<img src="assets/RAGulate_logo.png" alt="RAGulate logo" align="right" width="200" />
+# RAGulate<img src="assets/RAGulate_logo.png" alt="RAGulate logo" align="right" width="300" />
 [![GitHub issues](https://img.shields.io/github/issues/YDaiLab/RAGulate)](https://github.com/YDaiLab/RAGulate/issues)
 [![PyPI - Project](https://img.shields.io/pypi/v/RAGulate)](https://pypi.org/project/RAGulate/)
 [![Conda](https://img.shields.io/conda/v/zandigohar/RAGulate?label=conda)](https://anaconda.org/zandigohar/RAGulate)
