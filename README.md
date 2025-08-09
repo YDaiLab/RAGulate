@@ -97,7 +97,7 @@ See our [Reproducibility Guide](https://github.com/YDaiLab/RAGulate/blob/main/no
 
 If you use **RAGulate** in your research, please cite:
 
-Mehrdad Zandigohar, Jalees Rehman and Yang Dai (2025). **RAGulate: Single-Cell Regulatory-Embedded Variational Inference of Transcription Factor Activity from Gene Expression**, Bioinformatics Journal (under review).
+Mehrdad Zandigohar, Jalees Rehman and Yang Dai (2025). **RAGulate: Retrieval-Augmented Generation for Post-hoc Literature-Grounded Regulatory Validation**, XYZ Journal (under review).
 
 📄 Read the preprint on bioRxiv: 
 
