@@ -1,5 +1,5 @@
 # RAGulate
-<img src="assets/RAGulate_logo.png" alt="RAGulate logo" align="right" width="300" />
+<img src="assets/RAGulate_logo.png" alt="RAGulate logo" align="right" width="100" />
 
 [![GitHub issues](https://img.shields.io/github/issues/YDaiLab/RAGulate)](https://github.com/YDaiLab/RAGulate/issues)
 [![PyPI - Project](https://img.shields.io/pypi/v/RAGulate)](https://pypi.org/project/RAGulate/)
