@@ -1,4 +1,4 @@
-
+# RAGulate<img src=src="assets/RAGulate_logo.png" alt="RAGulate logo" align="right" width="360" />
 [![GitHub issues](https://img.shields.io/github/issues/YDaiLab/RAGulate)](https://github.com/YDaiLab/RAGulate/issues)
 [![PyPI - Project](https://img.shields.io/pypi/v/RAGulate)](https://pypi.org/project/RAGulate/)
 [![Conda](https://img.shields.io/conda/v/zandigohar/RAGulate?label=conda)](https://anaconda.org/zandigohar/RAGulate)
@@ -8,9 +8,6 @@
 ## Introduction
 **RAGulate** is a **R**etrieval-**A**ugmented **G**eneration (RAG) pipeline that integrates domain-specific large language models (LLM) with curated literature to identify, score, and validate inferred **regulat**ory (transcription factor-target gene) interactions in their biological context.
 
-<br>
-<img src="assets/RAGulate_logo.png" alt="RAGulate logo" align="right" width="200" />
-<br>
 
 For further information and example tutorials, please check our documentation:
 
