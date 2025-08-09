@@ -1,21 +1,14 @@
-<!-- Title and logo -->
-<h1 align="left">
-  RAGulate
-  <img src="assets/RAGulate_logo.png" alt="RAGulate logo" align="right" width="300">
-</h1>
+this is my current code:
 
-<!-- Badges -->
+# RAGulate<img src="assets/RAGulate_logo.png" alt="RAGulate logo" align="right" width="300" />
 [![GitHub issues](https://img.shields.io/github/issues/YDaiLab/RAGulate)](https://github.com/YDaiLab/RAGulate/issues)
 [![PyPI - Project](https://img.shields.io/pypi/v/RAGulate)](https://pypi.org/project/RAGulate/)
 [![Conda](https://img.shields.io/conda/v/zandigohar/RAGulate?label=conda)](https://anaconda.org/zandigohar/RAGulate)
 [![Docs](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://ydailab.github.io/RAGulate/)
 
----
 
 ## Introduction
-**RAGulate** is a **R**etrieval-**A**ugmented **G**eneration (RAG) pipeline that integrates domain-specific large language models (LLMs) with curated literature to identify, score, and validate inferred regulatory (transcription factor–target gene) interactions in their biological context.
-
-
+**RAGulate** is a **R**etrieval-**A**ugmented **G**eneration (RAG) pipeline that integrates domain-specific large language models (LLM) with curated literature to identify, score, and validate inferred **regulat**ory (transcription factor-target gene) interactions in their biological context.
 
 For further information and example tutorials, please check our documentation:
 
