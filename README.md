@@ -1,4 +1,4 @@
-# RAGulate<img src="assets/RAGulate_logo.png" alt="RAGulate logo" align="right" width="300" />
+# RAGulate<img src="assets/RAGulate_logo.png" alt="RAGulate logo" align="right" width="100" />
 **R**etrieval-**A**ugmented **G**eneration for Post-hoc Literature-Grounded **Regulatory** Validation
 
 [![GitHub issues](https://img.shields.io/github/issues/YDaiLab/RAGulate)](https://github.com/YDaiLab/RAGulate/issues)
