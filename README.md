@@ -12,10 +12,6 @@
 <img src="https://raw.githubusercontent.com/YDaiLab/RAGulate/main/assets/RAGulate_logo.png" alt="RAGulate logo" align="center" />
 <br>
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/YDaiLab/RAGulate/main/assets/RAGulate_logo.png" alt="RAGulate logo" />
-</p>
-
 For further information and example tutorials, please check our documentation:
 
 If you have any questions or concerns, feel free to [open an issue](https://github.com/YDaiLab/RAGulate/issues).
