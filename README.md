@@ -90,13 +90,10 @@ See our [Reproducibility Guide](https://github.com/YDaiLab/RAGulate/blob/main/no
 
 ## Citation
 
-**RAGulate** manuscript is currently under peer review. 
+⚠️ Preprint coming soon (bioRxiv, 2025)  
+**This repository is under active development.** Please cite as:  
+Zandigohar M, Rehman J, Dai Y. RAGulate: RAGulate: Retrieval-Augmented Generation for Post-hoc Literature-Grounded Regulatory Validation. 2025.
 
-If you use **RAGulate** in your research, please cite:
-
-Mehrdad Zandigohar, Jalees Rehman and Yang Dai (2025). **RAGulate: Retrieval-Augmented Generation for Post-hoc Literature-Grounded Regulatory Validation**, XYZ Journal (under review).
-
-📄 Read the preprint on bioRxiv: 
 
 ## Development & Contact
 RAGulate was developed and is actively maintained by Mehrdad Zandigohar as part of his PhD research at the University of Illinois Chicago (UIC), in the lab of Dr. Yang Dai.
