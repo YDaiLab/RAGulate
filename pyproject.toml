@@ -4,7 +4,7 @@ requires = ["setuptools>=68", "wheel", "build"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "ragulate-bio"                # Your PyPI name to reserve
+name = "ragulate-bio"               
 version = "0.0.1"
 description = "Retrieval-augmented validation for TF inference in single-cell biology"
 readme = "README.md"
