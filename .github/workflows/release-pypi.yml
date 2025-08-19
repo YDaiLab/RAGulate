@@ -1,0 +1,22 @@
+# .github/workflows/release-pypi.yml
+name: Publish to PyPI on tag
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  build-publish-pypi:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python -m pip install --upgrade build
+      - run: python -m build
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          password: ${{ secrets.PYPI_API_TOKEN }}
