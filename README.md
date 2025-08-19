@@ -45,6 +45,15 @@ Alternatively, if you want the latest, unreleased version, you can install it di
 pip install git+https://github.com/YDaiLab/RAGulate.git
 ```
 
+**Import**
+
+```python
+import ragulate_bio as ragulate  # recommended alias
+```
+
+Note: The PyPI distribution is named ragulate-bio to avoid a name conflict with an unrelated project called ragulate.
+Always import ragulate_bio in Python (you may alias it to ragulate for convenience)
+
 **Option 3 (Coming soon):**  
 For users who prefer Conda or Mamba for environment management, you can install **RAGulate** along with extra dependencies:
 
