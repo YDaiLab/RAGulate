@@ -1,0 +1,33 @@
+# pyproject.toml
+[build-system]
+requires = ["setuptools>=68", "wheel", "build"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ragulate-bio"                # Your PyPI name to reserve
+version = "0.0.1"
+description = "Retrieval-augmented validation for TF inference in single-cell biology"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Mehrdad Zandigohar" }]
+keywords = ["single-cell", "regulatory networks", "RAG", "bioinformatics"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Intended Audience :: Science/Research",
+  "Topic :: Scientific/Engineering :: Bio-Informatics"
+]
+dependencies = [
+  "numpy>=1.23"
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["ragulate_bio*"]
+
+[project.scripts]
+ragulate-bio = "ragulate_bio.cli:main"
