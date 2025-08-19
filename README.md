@@ -2,7 +2,7 @@
 **R**etrieval-**A**ugmented **G**eneration for Post-hoc Literature-Grounded **Regulatory** Validation
 
 [![GitHub issues](https://img.shields.io/github/issues/YDaiLab/RAGulate)](https://github.com/YDaiLab/RAGulate/issues)
-[![PyPI - Project](https://img.shields.io/pypi/v/RAGulate)](https://pypi.org/project/RAGulate/)
+[![PyPI - Project](https://img.shields.io/pypi/v/RAGulate)](https://pypi.org/project/RAGulate-bio/)
 [![Conda](https://img.shields.io/conda/v/zandigohar/RAGulate?label=conda)](https://anaconda.org/zandigohar/RAGulate)
 [![Docs](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://ydailab.github.io/RAGulate/)
 
@@ -35,7 +35,7 @@ pip install torch numpy
 You can install **RAGulate** via pip for a lightweight installation:
 
 ```bash
-pip install RAGulate
+pip install ragulate-bio
 ```
 
 **Option 2 (Coming soon):**  
@@ -80,7 +80,8 @@ There are two quick checks:
 **Q3: Can I use RAGulate with R-based tools?**  
 RAGulate is written in Python and works directly with `Numpy` objects. 
 
-**Q4: Reserved.**
+**Q4: What if I also have another package called ragulate installed?**
+RAGulate will warn you if it detects a conflicting installation. We recommend using a clean virtual environment to avoid import clashes.
 
 **Q5: How do I cite RAGulate?**  
 See the [Citation](#citation) section below for the latest reference and preprint link.
