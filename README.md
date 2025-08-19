@@ -31,21 +31,21 @@ pip install torch numpy
 
 ## Installation
 
-**Option 1:**  
+**Option 1 (Coming soon):**  
 You can install **RAGulate** via pip for a lightweight installation:
 
 ```bash
 pip install RAGulate
 ```
 
-**Option 2:**  
+**Option 2 (Coming soon):**  
 Alternatively, if you want the latest, unreleased version, you can install it directly from the source on GitHub:
 
 ```bash
 pip install git+https://github.com/YDaiLab/RAGulate.git
 ```
 
-**Option 3:**  
+**Option 3 (Coming soon):**  
 For users who prefer Conda or Mamba for environment management, you can install **RAGulate** along with extra dependencies:
 
 **Conda:**
