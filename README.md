@@ -80,7 +80,7 @@ There are two quick checks:
 **Q3: Can I use RAGulate with R-based tools?**  
 RAGulate is written in Python and works directly with `Numpy` objects. 
 
-**Q4:**
+**Q4: Reserved.**
 
 **Q5: How do I cite RAGulate?**  
 See the [Citation](#citation) section below for the latest reference and preprint link.
