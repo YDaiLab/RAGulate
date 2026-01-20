@@ -1,5 +1,5 @@
 # RAGulate<img src="assets/RAGulate_logo.png" alt="RAGulate logo" align="right" width="200" />
-**R**etrieval-**A**ugmented **G**eneration for Post-hoc Literature-Grounded **Regulatory** Validation
+**R**etrieval-**A**ugmented **G**eneration for Post-hoc Literature-Grounded **Regulatory** Assessment
 
 [![GitHub issues](https://img.shields.io/github/issues/YDaiLab/RAGulate)](https://github.com/YDaiLab/RAGulate/issues)
 [![PyPI - Project](https://img.shields.io/pypi/v/ragulate-bio)](https://pypi.org/project/ragulate-bio/)
@@ -8,7 +8,7 @@
 
 
 ## Introduction
-**RAGulate** is a **R**etrieval-**A**ugmented **G**eneration (RAG) pipeline that integrates domain-specific large language models (LLM) with curated literature to identify, score, and validate inferred **regulatory** (transcription factor-target gene) interactions in their biological context.
+**RAGulate** is a **R**etrieval-**A**ugmented **G**eneration (RAG) pipeline that integrates domain-specific large language models (LLM) with curated literature to identify, score, and assess inferred **regulatory** (transcription factor-target gene) interactions in their biological context.
 
 For further information and example tutorials, please check our documentation:
 
@@ -100,9 +100,9 @@ See our [Reproducibility Guide](https://github.com/YDaiLab/RAGulate/blob/main/no
 
 ## Citation
 
-⚠️ Preprint coming soon (bioRxiv, 2025)  
+⚠️ Preprint coming soon (bioRxiv, 2026)  
 **This repository is under active development.** Please cite as:  
-Zandigohar M, Rehman J, Dai Y. RAGulate: RAGulate: Retrieval-Augmented Generation for Post-hoc Literature-Grounded Regulatory Validation. 2025.
+Zandigohar M, Rehman J, Dai Y. RAGulate: RAGulate: Retrieval-Augmented Generation for Post-hoc Literature-Grounded Regulatory Assessment. 2026.
 
 
 ## Development & Contact
