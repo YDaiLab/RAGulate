@@ -137,10 +137,11 @@ EMB_CACHE_NPZ: str = os.path.join(PUBMED_CACHE, EMB_CACHE_BASENAME + ".npz")
 EMB_CACHE_META: str = os.path.join(PUBMED_CACHE, EMB_CACHE_BASENAME + ".meta.json")
 
 #: Base output directory for benchmark artefacts (gold standard,
-#: CollectRI pickles, metrics, etc.).
-OUTPUT_DIR: Path = Path("../outputs")
 # Project root:  .../RAGulate/
-PROJECT_ROOT: Path = Path(__file__).resolve().parents[2]
+PROJECT_ROOT: Path = Path(__file__).resolve().parents[1]
+#: CollectRI pickles, metrics, etc.).
+OUTPUT_DIR: Path = PROJECT_ROOT / "outputs"
+
 
 # Data directory: .../RAGulate/data/
 DATA_DIR: Path = PROJECT_ROOT / "data"
