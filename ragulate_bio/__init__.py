@@ -1,6 +1,6 @@
 # ragulate_bio/__init__.py
 __all__ = ["about"]
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
 def about():
     return {
