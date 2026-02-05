@@ -1,5 +1,5 @@
 # RAGulate<img src="assets/RAGulate_logo.png" alt="RAGulate logo" align="right" width="200" />
-**R**etrieval-**A**ugmented **G**eneration for Post-hoc Literature-Grounded **Regulatory** Interaction Assessment
+**R**etrieval-**A**ugmented **G**eneration for Post-hoc Literature-Grounded Assessment of Gene **Regulatory** Interaction 
 
 [![GitHub issues](https://img.shields.io/github/issues/YDaiLab/RAGulate)](https://github.com/YDaiLab/RAGulate/issues)
 [![PyPI - Project](https://img.shields.io/pypi/v/ragulate-bio)](https://pypi.org/project/ragulate-bio/)
