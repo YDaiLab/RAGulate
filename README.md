@@ -75,7 +75,7 @@ Large reproducibility resources for RAGulate (including prior regulatory databas
 
 To reproduce the tutorial and experimental results, download the Zenodo dataset and place the files in the expected locations (see `config.py`), then run the notebooks in `docs/` in order:
 
-1. [NCBI-contextualization_Final.ipynb](https://github.com/YDaiLab/RAGulate/blob/main/docs/NCBI-contextualization_Final.ipynb) (generates the context-specific pickle)
+1. [NCBI-contextualization_Final.ipynb](https://github.com/YDaiLab/RAGulate/blob/main/docs/NCBI-contexualization_Final.ipynb) (generates the context-specific pickle)
 2. [RAGulate_Modular_Rep.ipynb](https://github.com/YDaiLab/RAGulate/blob/main/docs/RAGulate_Modular_Rep.ipynb) (full reproducibility run)
 
 ## FAQ
