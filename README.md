@@ -69,12 +69,15 @@ mamba create -n RAGulate -c zandigohar RAGulate
 
 ## Reproducibility
 
-Large reproducibility resources used by RAGulate (including prior regulatory databases, serialized artifacts, and precomputed resources) are hosted separately on Zenodo due to size constraints.
+Large reproducibility resources for RAGulate (including prior regulatory databases, serialized artifacts, and precomputed resources) are hosted separately on Zenodo due to size constraints:
 
-Dataset DOI:
 [https://doi.org/10.5281/zenodo.18498382](https://doi.org/10.5281/zenodo.18498382)
 
-These resources are required to reproduce the tutorial and experimental results exactly as reported.
+To reproduce the tutorial and experimental results, download the Zenodo dataset and place the files in the expected locations (see `config.py`), then run the notebooks in `docs/` in order:
+
+1. [NCBI-contextualization_Final.ipynb](https://github.com/YDaiLab/RAGulate/blob/main/docs/NCBI-contextualization_Final.ipynb) (generates the context-specific pickle)
+2. [RAGulate_Modular_Rep.ipynb](https://github.com/YDaiLab/RAGulate/blob/main/docs/RAGulate_Modular_Rep.ipynb) (full reproducibility run)
+
 
 
 ## FAQ
