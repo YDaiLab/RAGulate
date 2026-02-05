@@ -67,6 +67,16 @@ conda install -c zandigohar RAGulate
 mamba create -n RAGulate -c zandigohar RAGulate
 ```
 
+## Reproducibility
+
+Large reproducibility resources used by RAGulate (including prior regulatory databases, serialized artifacts, and precomputed resources) are hosted separately on Zenodo due to size constraints.
+
+Dataset DOI:
+[https://doi.org/10.5281/zenodo.18498382](https://doi.org/10.5281/zenodo.18498382)
+
+These resources are required to reproduce the tutorial and experimental results exactly as reported.
+
+
 ## FAQ
 
 **Q1: Do I need a GPU to run RAGulate?**  
