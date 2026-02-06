@@ -10,6 +10,10 @@ here; authentication tokens should be provided via environment
 variables at runtime.
 """
 
+# PubMed cache backends
+PUBMED_SQLITE = None  # preferred: path to pubmed_cache.sqlite
+
+
 import os
 from pathlib import Path
 
@@ -137,11 +141,10 @@ EMB_CACHE_NPZ: str = os.path.join(PUBMED_CACHE, EMB_CACHE_BASENAME + ".npz")
 EMB_CACHE_META: str = os.path.join(PUBMED_CACHE, EMB_CACHE_BASENAME + ".meta.json")
 
 #: Base output directory for benchmark artefacts (gold standard,
-# Project root:  .../RAGulate/
-PROJECT_ROOT: Path = Path(__file__).resolve().parents[1]
 #: CollectRI pickles, metrics, etc.).
-OUTPUT_DIR: Path = PROJECT_ROOT / "outputs"
-
+OUTPUT_DIR: Path = Path("../outputs")
+# Project root:  .../RAGulate/
+PROJECT_ROOT: Path = Path(__file__).resolve().parents[2]
 
 # Data directory: .../RAGulate/data/
 DATA_DIR: Path = PROJECT_ROOT / "data"

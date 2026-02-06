@@ -9,7 +9,6 @@ We support multiple encoders (MiniLM vs BioBERT) and optional
 MMR re-ranking, while keeping a backwards-compatible API for
 the rest of the pipeline.
 """
-
 from typing import List, Optional, Dict, Any, Tuple
 import os
 import re
@@ -18,11 +17,10 @@ import numpy as np
 
 from rank_bm25 import BM25Okapi  # real BM25
 
-from . import state
 from . import config
+from . import embedding
 from .embedding import (
     get_sentence_embedder,
-    _ensure_global_corpus,
     _load_cached_pubmed_json,
     _concat_title_abs,
 )
@@ -48,7 +46,6 @@ _RETRIEVER_CACHE: Dict[Tuple[str, int], "PubMedRetriever"] = {}
 _BM25_INDEX: Optional[BM25Okapi] = None
 _BM25_PMIDS: List[str] = []
 _BM25_TOKENS: List[List[str]] = []
-
 
 # ---------------------------------------------------------------------
 # Canonical encoder naming
@@ -107,27 +104,32 @@ def _ensure_minilm_corpus(verbose: bool = True) -> None:
     """
     Ensure that the default MiniLM corpus is built and registered
     under encoder_name="minilm".
+
+    IMPORTANT:
+    We treat modules.embedding as the single source of truth for the
+    global corpus (PMIDs + vectors). Retrieval then registers that
+    corpus locally under _ENCODER_CORPORA["minilm"].
     """
     encoder_name = _default_minilm_name()
     if encoder_name in _ENCODER_CORPORA:
         return
 
-    # Build the original global corpus and populate
-    # state.GLOBAL_PMIDS / GLOBAL_VECS / GLOBAL_EMB
-    _ensure_global_corpus(config.EMBED_MODEL_NAME, verbose=verbose)
+    # Build/load global corpus via embedding module (authoritative)
+    embedding._ensure_global_corpus(embedder_name=config.EMBED_MODEL_NAME, verbose=verbose)
 
-    pmids = list(state.GLOBAL_PMIDS)
-    vecs = state.GLOBAL_VECS
-    emb_model = state.GLOBAL_EMB
+    pmids = list(embedding.state.GLOBAL_PMIDS)
+    vecs = embedding.state.GLOBAL_VECS
+    emb_model = embedding.state.GLOBAL_EMB
 
-    if vecs is None or emb_model is None:
-        raise RuntimeError("MiniLM global corpus was not initialised correctly")
+    if vecs is None or emb_model is None or len(pmids) == 0:
+        raise RuntimeError("MiniLM global corpus was not initialised correctly (0 docs)")
 
     _ENCODER_CORPORA[encoder_name] = {
         "pmids": pmids,
         "vecs": vecs,
     }
     _ENCODER_MODELS[encoder_name] = emb_model
+
 
 
 def _biobert_cache_paths() -> Tuple[str, str]:
@@ -201,7 +203,8 @@ def _ensure_biobert_corpus(verbose: bool = True) -> None:
         emb_model = get_sentence_embedder(model_name)
         # Update the global sentence embedding model so that RAG context
         # construction uses the correct encoder when BioBERT is requested.
-        state.GLOBAL_EMB = emb_model
+        embedding.state.GLOBAL_EMB = emb_model
+
         _ENCODER_CORPORA[encoder_name] = {"pmids": pmids, "vecs": vecs}
         _ENCODER_MODELS[encoder_name] = emb_model
         return
@@ -223,7 +226,8 @@ def _ensure_biobert_corpus(verbose: bool = True) -> None:
         print(f"[biobert-corpus] initialising BioBERT encoder: {model_name}")
     emb_model = get_sentence_embedder(model_name)
     # Update the global embedding model so sentence selection aligns with BioBERT
-    state.GLOBAL_EMB = emb_model
+    embedding.state.GLOBAL_EMB = emb_model
+
 
     texts: List[str] = []
     for pmid in pmids:
@@ -431,9 +435,19 @@ def ensure_pubmed_retriever(
         _ENCODER_CORPORA.clear()
         _ENCODER_MODELS.clear()
         _RETRIEVER_CACHE.clear()
-        state.GLOBAL_PMIDS = []
-        state.GLOBAL_VECS = None
-        state.GLOBAL_EMB = None
+        embedding.state.GLOBAL_PMIDS[:] = []
+        embedding.state.GLOBAL_TEXTS[:] = []
+        embedding.state.GLOBAL_VECS = None
+        embedding.state.GLOBAL_EMB = None
+        embedding.state._SINGLETONS["global_corpus"]["built"] = False
+        embedding.state._SINGLETONS["global_corpus"]["num_docs"] = 0
+        embedding.state._SINGLETONS["global_corpus"]["dim"] = 0
+        # reset BM25 caches (otherwise BM25 can stay stale / empty)
+        global _BM25_INDEX, _BM25_PMIDS, _BM25_TOKENS
+        _BM25_INDEX = None
+        _BM25_PMIDS = []
+        _BM25_TOKENS = []
+
 
     # Build corpus for this encoder if needed
     _ensure_encoder_corpus(enc, verbose=verbose)
@@ -498,6 +512,19 @@ def _ensure_bm25_index(verbose: bool = True) -> None:
     # Reuse MiniLM corpus PMIDs / cache
     _ensure_minilm_corpus(verbose=verbose)
     pmids = _ENCODER_CORPORA[_default_minilm_name()]["pmids"]
+    
+    if verbose and config.VERBOSE >= 3:
+        print("[bm25] encoder corpus pmids:", len(pmids))
+        print("[bm25] embedding.state pmids:", len(embedding.state.GLOBAL_PMIDS))
+
+
+    if not pmids:
+        _BM25_PMIDS = []
+        _BM25_TOKENS = []
+        _BM25_INDEX = None
+        if verbose and config.VERBOSE >= 1:
+            print("[bm25] no documents available; BM25 index not built")
+        return
 
     if verbose and config.VERBOSE >= 1:
         print(f"[bm25] building BM25 index over {len(pmids)} documents")
@@ -528,7 +555,8 @@ def retrieve_bm25(
     """
     _ensure_bm25_index(verbose=False)
 
-    assert _BM25_INDEX is not None
+    if _BM25_INDEX is None:
+        return []
     query_tokens = _tokenize(query)
     scores = _BM25_INDEX.get_scores(query_tokens)
 

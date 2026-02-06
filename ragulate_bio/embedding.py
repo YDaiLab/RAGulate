@@ -8,6 +8,7 @@ loading and saving embeddings. The corpus is stored in shared
 module state (modules.state) so that multiple calls to the
 retriever share the same vectors and avoid recomputation.
 """
+import sqlite3
 
 import os
 import json
@@ -51,16 +52,51 @@ def _iter_pubmed_pmids(cache_dir: str) -> Iterable[str]:
     if not os.path.isdir(cache_dir):
         return []
     for fn in os.listdir(cache_dir):
-        if fn.endswith(".json"):
-            yield os.path.splitext(fn)[0]
+        if not fn.endswith(".json"):
+            continue
+        stem = os.path.splitext(fn)[0]
+        if stem.isdigit():  # only PMIDs
+            yield stem
+
+_PUBMED_SQLITE_CONN = None
+
+def _get_pubmed_sqlite_conn():
+    global _PUBMED_SQLITE_CONN
+    db = getattr(config, "PUBMED_SQLITE", None)
+    if not db:
+        return None
+    if _PUBMED_SQLITE_CONN is None:
+        _PUBMED_SQLITE_CONN = sqlite3.connect(db, check_same_thread=False)
+    return _PUBMED_SQLITE_CONN
 
 
+def _load_cached_pubmed_json(pmid: str) -> dict:
+    """Load a cached PubMed record (SQLite preferred, JSON fallback)."""
+
+    # 1) Preferred backend: SQLite (single file)
+    con = _get_pubmed_sqlite_conn()
+    if con is not None:
+        cur = con.cursor()
+        cur.execute("SELECT title, abstract FROM pubmed WHERE pmid=?", (str(pmid),))
+        row = cur.fetchone()
+        if row is not None:
+            title, abstract = row
+            return {"title": title or "", "abstract": abstract or ""}
+
+    # 2) Legacy backend: per-PMID JSON files
+    path = os.path.join(config.PUBMED_CACHE, f"{pmid}.json")
+    with open(path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+
+'''
 def _load_cached_pubmed_json(pmid: str) -> dict:
     """Load a cached PubMed record from disk."""
     path = os.path.join(config.PUBMED_CACHE, f"{pmid}.json")
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
-
+'''
 
 def _concat_title_abs(rec: dict) -> str:
     """Concatenate the title and abstract of a PubMed record into one string."""
