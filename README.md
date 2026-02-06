@@ -24,6 +24,7 @@ Before installing and running RAGulate, ensure you have the following libraries 
 - **PyTorch** (version 2.0 or higher)  
   Install with the exact command from the [PyTorch “Get Started” page](https://pytorch.org/get-started/locally/) for your OS, Python version and (optionally) CUDA toolkit.
 - **NumPy** (version 1.23 or higher)
+- **bm-25** (version 0.2.2 or higher)
 
 You can install these dependencies using `pip`:
 
