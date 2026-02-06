@@ -31,14 +31,14 @@ pip install torch numpy
 
 ## Installation
 
-**Option 1 (Coming soon):**  
+**Option 1:**  
 You can install **RAGulate** via pip for a lightweight installation:
 
 ```bash
 pip install ragulate-bio
 ```
 
-**Option 2 (Coming soon):**  
+**Option 2:**  
 Alternatively, if you want the latest, unreleased version, you can install it directly from the source on GitHub:
 
 ```bash
