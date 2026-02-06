@@ -70,6 +70,13 @@ conda install -c zandigohar RAGulate
 mamba create -n RAGulate -c zandigohar RAGulate
 ```
 
+## Tutorials
+
+Run the tutorial notebook:
+
+- [Tutorial.ipynb](https://github.com/YDaiLab/RAGulate/blob/main/docs/Tutorial.ipynb)
+
+
 ## Reproducibility
 
 Large reproducibility resources for RAGulate (including prior regulatory databases, serialized artifacts, and precomputed resources) are hosted separately on Zenodo due to size constraints:
