@@ -10,6 +10,8 @@
 ## Introduction
 **RAGulate** is a **R**etrieval-**A**ugmented **G**eneration (RAG) pipeline that integrates domain-specific large language models (LLM) with curated literature to identify, score, and assess inferred **regulatory** (transcription factor-target gene) interactions in their biological context.
 
+<img src="assets/Pipeline.png" alt="RAGulate pipeline" align="center" />
+
 For further information and example tutorials, please check our documentation:
 
 If you have any questions or concerns, feel free to [open an issue](https://github.com/YDaiLab/RAGulate/issues).
