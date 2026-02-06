@@ -74,7 +74,7 @@ mamba create -n RAGulate -c zandigohar RAGulate
 
 Run the tutorial notebook:
 
-- [Tutorial.ipynb](https://github.com/YDaiLab/RAGulate/blob/main/docs/Tutorial.ipynb)
+- [RAGulate Tutorial](https://github.com/YDaiLab/RAGulate/blob/main/docs/Tutorial.html)
 
 
 ## Reproducibility
