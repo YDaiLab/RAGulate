@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ragulate-bio"
-version = "1.1.0"
+version = "1.1.1"
 description = "Retrieval augmented validation for TF inference in single cell biology"
 readme = "README.md"
 requires-python = ">=3.9"
@@ -18,7 +18,7 @@ classifiers = [
   "Intended Audience :: Science/Research",
   "Topic :: Scientific/Engineering :: Bio-Informatics"
 ]
-dependencies = ["numpy>=1.23"]
+dependencies = ["rank-bm25", "numpy>=1.23"]
 
 [tool.setuptools]
 packages = ["ragulate_bio"]  # no src layout, package at repo root
