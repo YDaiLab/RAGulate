@@ -2,8 +2,7 @@
 **R**etrieval-**A**ugmented **G**eneration for Post-hoc Literature-Grounded Assessment of Gene **Regulatory** Interaction 
 
 [![GitHub issues](https://img.shields.io/github/issues/YDaiLab/RAGulate)](https://github.com/YDaiLab/RAGulate/issues)
-[![PyPI - Project](https://img.shields.io/pypi/v/ragulate-bio)](https://pypi.org/project/ragulate-bio/)
-<!-- [![Conda](https://img.shields.io/conda/v/zandigohar/RAGulate?label=conda)](https://anaconda.org/zandigohar/RAGulate) -->
+[![PyPI - Project](https://img.shields.io/pypi/v/ragulate-bio)](https://pypi.org/project/ragulate-bio/) <!-- [![Conda](https://img.shields.io/conda/v/zandigohar/RAGulate?label=conda)](https://anaconda.org/zandigohar/RAGulate) -->
 [![Docs](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://ydailab.github.io/RAGulate/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18320506.svg)](https://doi.org/10.5281/zenodo.18320506)
 
